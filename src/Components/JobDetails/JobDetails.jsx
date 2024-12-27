@@ -4,6 +4,7 @@ import { CiCalendar } from "react-icons/ci";
 import { FaPhone } from "react-icons/fa";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { IoLocation } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
 
 const JobDetails = () => {
     const jobs = useLoaderData()
@@ -14,6 +15,10 @@ const JobDetails = () => {
     const { logo, job_title, job_type, location, salary, company_name, remote_or_onsite, job_description, job_responsibility,
         experiences, educational_requirements, contact_information
     } = job
+
+    const handleapply = () =>{
+       toast(" You have successfully Applied ");
+    }
 
     return (
         <div className="max-w-6xl mx-auto flex gap-4 mt-8 ">
@@ -75,9 +80,10 @@ const JobDetails = () => {
                 </div>
 
                 <div className="mt-4">
-                            <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] w-full btn-primary">Apply Now</button>
+                            <button onClick={handleapply}  className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white w-full border-none btn-primary">Apply Now</button>
                         </div>
             </div>
+            <ToastContainer></ToastContainer>
 
         </div>
     );
