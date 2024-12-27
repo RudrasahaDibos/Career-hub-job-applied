@@ -5,6 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { IoLocation } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
+import { saveJobApplication } from "../Utility/Localstorage";
 
 const JobDetails = () => {
     const jobs = useLoaderData()
@@ -17,6 +18,7 @@ const JobDetails = () => {
     } = job
 
     const handleapply = () =>{
+     saveJobApplication(id)
        toast(" You have successfully Applied ");
     }
 
