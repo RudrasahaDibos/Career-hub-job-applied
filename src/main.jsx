@@ -9,7 +9,7 @@ import {
 import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Statistics from './Components/Statistics/Statistics';
-import Applied_Jobs from './Components/Applied Jobs/Applied_Jobs';
+import Applied_Jobs from './Components/Applied_Jobs/Applied_Jobs';
 import Blog from './Components/Blog/Blog';
 import JobDetails from './Components/JobDetails/JobDetails';
 
@@ -29,11 +29,13 @@ const router = createBrowserRouter([
       },
       {
         path:'/applied',
+        loader: ()=>fetch('/jobs.json'),
         element:<Applied_Jobs></Applied_Jobs>
+       
       },
       {
            path: '/job/:id',
-           loader:()=> fetch('../public/jobs.json'),
+           loader:()=> fetch('/jobs.json'),
            element:<JobDetails></JobDetails>
            
       },
