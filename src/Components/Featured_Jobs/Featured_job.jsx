@@ -1,10 +1,10 @@
 import { RiMoneyRupeeCircleLine } from "react-icons/ri";
 import { IoLocation } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const Featured_job = ({ job }) => {
-    const { logo,job_title,job_type,location,salary,company_name,remote_or_onsite} = job
-    console.log(job)
+    const { id,logo,job_title,job_type,location,salary,company_name,remote_or_onsite} = job
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100  shadow-xl">
             <div className="ml-8 mt-4">
                 <img
                     src={logo}
@@ -16,8 +16,8 @@ const Featured_job = ({ job }) => {
                 </h2>
                 <p>{company_name}</p>
                 <div className="flex gap-4">
-                    <button className="btn border-bg-">{job_type}</button>
-                    <button className="btn ">{remote_or_onsite}</button>
+                    <button className="btn badge badge-outline text-[#7E90FE]">{job_type}</button>
+                    <button className="btn badge badge-outline text-[#7E90FE]">{remote_or_onsite}</button>
                 </div>
                   <div className="flex gap-4 ">
                     <div className="flex justify-center items-center gap-2">
@@ -31,9 +31,9 @@ const Featured_job = ({ job }) => {
                      </div>
                      
                   </div>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                <div className="card-actions">
+                  <Link to={`/job/${id}`}><button  className=" btn badge bg-indigo-400 text-white">View Details</button></Link>
+                    
                 </div>
             </div>
         </div>
